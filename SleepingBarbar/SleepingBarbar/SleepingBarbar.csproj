@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="LogUtils">
-      <HintPath>..\..\..\..\..\..\..\Pratik\Projects\Visual Studio 2013\Projects\ExtensionUtilSolution\Assemblies\LogUtils.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Projects\Visual Studio 2013\Projects\ExtensionUtilSolution\Assemblies\LogUtils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramUsingTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
