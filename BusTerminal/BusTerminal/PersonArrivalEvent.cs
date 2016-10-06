@@ -51,7 +51,7 @@ namespace BusTerminal
             try
             {
                 //increase number of NumberofPersonInQueueAtStop randomly between 1 - 5 and and same has to be updated in dicNumberOfPersonsByStopNumber upon returning
-                evnt.NumberofPersonInQueueAtStop = NumberofPersonInQueueAtStop + 1; //TODO::Randomize this
+                evnt.NumberofPersonInQueueAtStop = NumberofPersonInQueueAtStop + NextTimeIntervalGenerator.GetPersons(); //TODO::Randomize this
                 ApplicationLog.Instance.WriteInfo(string.Format("New person(s) have arrived at stop#: {0} and total number of passnegers are {1}.", evnt.BusStopNumber, evnt.NumberofPersonInQueueAtStop));
             }
             catch (Exception ex)
