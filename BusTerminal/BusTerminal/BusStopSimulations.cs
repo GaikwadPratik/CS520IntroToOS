@@ -9,6 +9,7 @@ namespace BusTerminal
 {
     public class BusStopSimulation
     {
+        public BusTerminalConfiguration Configuration { get; set; }
         Dictionary<int, int> _dicNumberOfPersonsByStopNumber = new Dictionary<int, int>();
 
         /// <summary>
@@ -18,7 +19,7 @@ namespace BusTerminal
 
         public void SimulateEvents()
         {
-            int _simulationTime = 7200;
+            int _simulationTime = Configuration.MaxSimulationTime;
             ApplicationLog.Instance.WriteInfo(string.Format("Simulation started for {0} seconds.", _simulationTime));
             if (_lstBusStopevents != null && _lstBusStopevents.Count > 0)
             {
@@ -109,7 +110,7 @@ namespace BusTerminal
 
         public void Initialize()
         {
-            int _totalBusStops = 15;
+            int _totalBusStops = Configuration.TotalNumberofBusStops;
             int _busNumber = 1;
             for (int _nIndex = 1; _nIndex <= _totalBusStops; _nIndex++)
             {
