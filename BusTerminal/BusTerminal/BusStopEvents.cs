@@ -40,6 +40,7 @@ namespace BusTerminal
         public int BoardingTime
         {
             get { return _boardingTime; }
+            set { _boardingTime = value; }
         }
 
         public int ClockTime

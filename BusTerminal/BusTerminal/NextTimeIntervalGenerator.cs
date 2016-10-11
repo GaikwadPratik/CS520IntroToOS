@@ -11,6 +11,7 @@ namespace BusTerminal
     {
         static double seed = 1000;
         static Random _random = new Random(int.Parse(seed.ToString()));
+        public static bool SinglePersonIncrement { get; set; }
 
         public static double GetTimeInterval()
         {
@@ -32,7 +33,7 @@ namespace BusTerminal
             int _nRtnVal = 0;
             try
             {
-                _nRtnVal = _random.Next(1, 5);
+                _nRtnVal = SinglePersonIncrement ? 1 : _random.Next(1, 5);
             }
             catch (Exception ex)
             {

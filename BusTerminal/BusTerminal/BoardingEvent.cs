@@ -44,7 +44,8 @@ namespace BusTerminal
                 {
                     BusStopNumber = busStopNumber,
                     TypeofEvent = EventType.PersonBoarding,
-                    BusNumber = this.BusNumber
+                    BusNumber = this.BusNumber,
+                    BoardingTime = this.BoardingTime
                 };
 
                 //Calcuate next execution time.

@@ -25,7 +25,7 @@ namespace BusTerminal
 
     public class BusTerminalConfiguration
     {
-        public int BusDriveTime { get; set; } = 30;
+        public int BusDriveTime { get; set; } = 300;
 
         /// <summary>
         /// This is equal to 1/mean_arrival_rate
@@ -35,11 +35,12 @@ namespace BusTerminal
         public int BoardingTime { get; set; } = 2;
 
         public int TotalNumberofBusStops { get; set; } = 15;
-
-        public int TimerInterval { get; set; } = 10;
-
+        
+        /// <summary>
+        /// Indicates whether only one person should arrive or multiple persons can arrive.
+        /// </summary>
         public bool SinglePersonIncrement { get; set; } = true;
 
-        public int MaxSimulationTime { get; set; } = 7200;
+        public int MaxSimulationTime { get; set; } = 28800;
     }
 }

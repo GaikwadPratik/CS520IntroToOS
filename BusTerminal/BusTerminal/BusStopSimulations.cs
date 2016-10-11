@@ -19,6 +19,7 @@ namespace BusTerminal
 
         public void SimulateEvents()
         {
+            NextTimeIntervalGenerator.SinglePersonIncrement = Configuration.SinglePersonIncrement;
             int _simulationTime = Configuration.MaxSimulationTime;
             ApplicationLog.Instance.WriteInfo(string.Format("Simulation started for {0} seconds.", _simulationTime));
             if (_lstBusStopevents != null && _lstBusStopevents.Count > 0)
@@ -48,7 +49,8 @@ namespace BusTerminal
                                 _nextEvent = new PersonArrivalEvent()
                                 {
                                     NumberofPersonInQueueAtStop = _currentPassangersAtStop,
-                                    ClockTime = _clockTime
+                                    ClockTime = _clockTime,
+                                    AverageArrivalTime = Configuration.MeanInterArrivalRate
                                 };
                                 _nextEvent = _nextEvent.CreateEvent(_eventBusStopNumber) as PersonArrivalEvent;
                                 break;
@@ -126,7 +128,9 @@ namespace BusTerminal
                     {
                         NumberofPersonInQueueAtStop = _currentPassangersAtStop,
                         BusNumber = _busNumber,
-                        ClockTime = _nIndex
+                        ClockTime = _nIndex,
+                        DriveTime = Configuration.BusDriveTime,
+                        BoardingTime = Configuration.BoardingTime
                     };
 
                     _busArrivalEvent = _busArrivalEvent.CreateEvent(_nIndex) as BusArrivalEvent;
@@ -137,7 +141,8 @@ namespace BusTerminal
                     {
                         NumberofPersonInQueueAtStop = _currentPassangersAtStop,
                         BusNumber = _busNumber,
-                        TimeofExecution = _busArrivalEvent.TimeofExecution
+                        TimeofExecution = _busArrivalEvent.TimeofExecution,
+                        BoardingTime = Configuration.BoardingTime
                     };
 
                     _boardingEvent = _boardingEvent.CreateEvent(_nIndex) as BoardingEvent;
@@ -149,7 +154,8 @@ namespace BusTerminal
                 PersonArrivalEvent _personArrival = new PersonArrivalEvent()
                 {
                     NumberofPersonInQueueAtStop = _currentPassangersAtStop,
-                    ClockTime = _nIndex
+                    ClockTime = _nIndex,
+                    AverageArrivalTime = Configuration.MeanInterArrivalRate
                 };
                 _personArrival = _personArrival.CreateEvent(_nIndex) as PersonArrivalEvent;
                 AddToQueue(_personArrival);

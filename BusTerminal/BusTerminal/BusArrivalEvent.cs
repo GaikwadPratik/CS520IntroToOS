@@ -22,6 +22,7 @@ namespace BusTerminal
         public int DriveTime
         {
             get { return _driveTime; }
+            set { _driveTime = value; }
         }
 
         /// <summary>
@@ -42,7 +43,9 @@ namespace BusTerminal
                     BusStopNumber = busStopNumber,
                     TypeofEvent = EventType.BusArrial,
                     BusNumber = this.BusNumber,
-                    ClockTime = this.ClockTime
+                    ClockTime = this.ClockTime,
+                    _driveTime = this.DriveTime,
+                    BoardingTime = this.BoardingTime
                 };
                 //Calcuate execution time for next bus stop.
                 evnt.TimeofExecution = ClockTime + _driveTime + NumberofPersonInQueueAtStop * BoardingTime;

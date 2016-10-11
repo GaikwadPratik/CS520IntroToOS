@@ -17,6 +17,7 @@ namespace BusTerminal
         public int AverageArrivalTime
         {
             get { return _averageArrivalTime; }
+            set { _averageArrivalTime = value; }
         }
 
         /// <summary>
