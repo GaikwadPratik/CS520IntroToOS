@@ -17,14 +17,14 @@ namespace BusTerminal
             try
             {
                 _event = evnt as BoardingEvent;
-                ApplicationLog.Instance.WriteInfo(string.Format("There are {0} passengers at stop# {1} and hence bus will be at stop for {2}.", _event.NumberofPersonInQueueAtStop, _event.BusStopNumber, BoardingTime * _event.NumberofPersonInQueueAtStop));
-                do
-                {
+                //ApplicationLog.Instance.WriteInfo(string.Format("There are {0} passengers at stop# {1} and hence bus will be at stop for {2}.", _event.NumberofPersonInQueueAtStop, _event.BusStopNumber, BoardingTime * _event.NumberofPersonInQueueAtStop));
+                //do
+                //{
                     ApplicationLog.Instance.WriteInfo(string.Format("Boarding passenger in Bus# {0} at stop# {1}.", BusNumber, _event.BusStopNumber));
                     _event.NumberofPersonInQueueAtStop -= 1;
-                }
-                while (_event.NumberofPersonInQueueAtStop > 0);
-                ApplicationLog.Instance.WriteInfo(string.Format("All passengers have boarded Bus# {0} at stop# {1}.", BusNumber, _event.BusStopNumber));
+                //}
+                //while (_event.NumberofPersonInQueueAtStop > 0);
+                //ApplicationLog.Instance.WriteInfo(string.Format("All passengers have boarded Bus# {0} at stop# {1}.", BusNumber, _event.BusStopNumber));
             }
             catch (Exception ex)
             {

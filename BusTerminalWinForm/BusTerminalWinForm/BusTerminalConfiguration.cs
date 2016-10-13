@@ -13,7 +13,7 @@
 
         public int TotalNumberofBusStops { get; set; } = 15;
 
-        public int TimerInterval { get; set; } = 10;
+        public int TimerInterval { get; set; } = 100;
 
         public bool SinglePersonIncrement { get; set; } = true;
 
