@@ -85,25 +85,34 @@ namespace BusTerminal
                             #region EventType.PersonBoarding
                             case EventType.PersonBoarding:
 
-								if (_event.NumberofPersonInQueueAtStop != 0)
-								{
-									_event = _event.ExecuteEvent(_event);
+                                _event = _event.ExecuteEvent(_event);
 
-									//Make passengers at bus stop 0 since they are all boarded.
-									_dicNumberOfPersonsByStopNumber[_eventBusStopNumber] = _event.NumberofPersonInQueueAtStop;
-									_event.TimeofExecution = _clockTime + _event.BoardingTime;
-									//Boarding event for next bus stop
-									_nextEvent = _event.CreateEvent(_eventBusStopNumber);
-								}
-								else
-								{
-									//Make passengers at bus stop 0 since they are all boarded.
-									_dicNumberOfPersonsByStopNumber[_eventBusStopNumber] = 0;
-									_event.TimeofExecution = _boardinTimeExecution;
-									_boardinTimeExecution = 0;
-									//Boarding event for next bus stop
-									_nextEvent = _event.CreateEvent(_eventBusStopNumber + 1);
-								}
+                                //Make passengers at bus stop 0 since they are all boarded.
+                                _dicNumberOfPersonsByStopNumber[_eventBusStopNumber] = 0;
+                                _event.TimeofExecution = _boardinTimeExecution;
+                                _boardinTimeExecution = 0;
+                                //Boarding event for next bus stop
+                                _nextEvent = _event.CreateEvent(_eventBusStopNumber + 1);
+
+                                //if (_event.NumberofPersonInQueueAtStop != 0)
+                                //{
+                                //	_event = _event.ExecuteEvent(_event);
+
+                                //	//Make passengers at bus stop 0 since they are all boarded.
+                                //	_dicNumberOfPersonsByStopNumber[_eventBusStopNumber] = _event.NumberofPersonInQueueAtStop;
+                                //	_event.TimeofExecution = _clockTime + _event.BoardingTime;
+                                //	//Boarding event for next bus stop
+                                //	_nextEvent = _event.CreateEvent(_eventBusStopNumber);
+                                //}
+                                //else
+                                //{
+                                //	//Make passengers at bus stop 0 since they are all boarded.
+                                //	_dicNumberOfPersonsByStopNumber[_eventBusStopNumber] = 0;
+                                //	_event.TimeofExecution = _boardinTimeExecution;
+                                //	_boardinTimeExecution = 0;
+                                //	//Boarding event for next bus stop
+                                //	_nextEvent = _event.CreateEvent(_eventBusStopNumber + 1);
+                                //}
                                 break;
                                 #endregion
                         }
