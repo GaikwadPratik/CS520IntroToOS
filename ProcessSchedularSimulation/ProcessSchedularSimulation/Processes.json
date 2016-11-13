@@ -1,0 +1,36 @@
+{
+  "AlgorithmName": "RR",
+  "Quanta": 1,
+  "Processes": [
+    {
+      "Name": "P1",
+      "ArrivalTime": 0,
+      "Burst": 10,
+      "Priority": 3
+    },
+    {
+      "Name": "P2",
+      "ArrivalTime": 0,
+      "Burst": 1,
+      "Priority": 1
+    },
+    {
+      "Name": "P3",
+      "ArrivalTime": 0,
+      "Burst": 2,
+      "Priority": 3
+    },
+    {
+      "Name": "P4",
+      "ArrivalTime": 0,
+      "Burst": 1,
+      "Priority": 4
+    },
+    {
+      "Name": "P5",
+      "ArrivalTime": 0,
+      "Burst": 5,
+      "Priority": 2
+    }
+  ]
+}
