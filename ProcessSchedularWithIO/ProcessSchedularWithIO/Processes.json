@@ -1,0 +1,69 @@
+{
+  "AlgorithmName": "RR",
+  "Quanta": 240,
+  "Processes": [
+    {
+      "Name": "P0",
+      "ArrivalTime": 0,
+      "Burst": 30,
+      "Priority": 1
+    },
+    {
+      "Name": "P1",
+      "ArrivalTime": 0,
+      "Burst": 35,
+      "Priority": 1
+    },
+    {
+      "Name": "P2",
+      "ArrivalTime": 0,
+      "Burst": 40,
+      "Priority": 1
+    },
+    {
+      "Name": "P3",
+      "ArrivalTime": 0,
+      "Burst": 45,
+      "Priority": 1
+    },
+    {
+      "Name": "P4",
+      "ArrivalTime": 0,
+      "Burst": 50,
+      "Priority": 1
+    },
+    {
+      "Name": "P5",
+      "ArrivalTime": 0,
+      "Burst": 55,
+      "Priority": 1
+    },
+    {
+      "Name": "P6",
+      "ArrivalTime": 0,
+      "Burst": 60,
+      "Priority": 1
+    },
+    {
+      "Name": "P7",
+      "ArrivalTime": 0,
+      "Burst": 65,
+      "Priority": 1
+    },
+    {
+      "Name": "P8",
+      "ArrivalTime": 0,
+      "Burst": 70,
+      "Priority": 1
+    },
+    {
+      "Name": "P9",
+      "ArrivalTime": 0,
+      "Burst": 75,
+      "Priority": 1
+    }
+  ],
+  "BurstTimes": [ 30, 35, 40, 45, 50, 55, 60, 65, 70, 75 ],
+  "Alpha": 0,
+  "IOTime": 60
+}
